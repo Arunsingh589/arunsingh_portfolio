@@ -107,7 +107,7 @@ const Tech = () => {
 
       {/* Reverse Triangle Layout */}
       {techGroups.map((group, index) => (
-        group.length > 0 && <TechRow key={index} techs={group} index={index} />
+        group.length > 0 && <TechRow key={index} techs={group} />
       ))}
 
       <div className="w-full h-full absolute">
