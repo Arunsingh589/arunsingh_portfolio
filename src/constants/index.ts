@@ -66,7 +66,7 @@ const services: TService[] = [
     icon: backend,
   },
   {
-    title: 'Content Creator',
+    title: 'Video Creator',
     icon: creator,
   },
 ];
@@ -303,21 +303,33 @@ const projects: TProject[] = [
     sourceCodeLink: 'https://github.com/',
   },
   {
-    name: 'Local Newsletter',
+    name: 'CareCob AI',
     description:
-      'A robust newsletter platform with creation and scheduling features, multi-source feed integration, bulk selection, and seamless API integration. Includes a data-driven Dashboard with analytics, interactive charts, role-based access control for Users, Admins, Partners, and Managers.',
+      'An AI-powered healthcare companion platform with intelligent voice calls via VAPI, scheduled medication reminders, personalized health profiles, real-time dashboards with SMS/email alerts via Twilio, role-based authentication, and enterprise admin panel for caregiving organizations.',
     tags: [
       {
         name: 'react',
         color: 'blue-text-gradient',
       },
       {
-        name: 'javascript',
-        color: 'yellow-text-gradient',
-      },
-      {
         name: 'tailwind',
         color: 'pink-text-gradient',
+      },
+      {
+        name: 'django',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'python',
+        color: 'purple-text-gradient',
+      },
+      {
+        name: 'vapi',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'twilio',
+        color: 'cyan-text-gradient',
       },
     ],
     image: tripguide,
