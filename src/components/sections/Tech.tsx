@@ -49,7 +49,7 @@ const Tech = () => {
     }
   });
 
-  const TechRow = ({ techs, index }: { techs: typeof technologies; index: number }) => (
+  const TechRow = ({ techs }: { techs: typeof technologies }) => (
     <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
       {techs.map((technology) => (
         <div
