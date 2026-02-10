@@ -227,27 +227,27 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-    name: 'Sara Lee',
-    designation: 'CFO',
-    company: 'Acme Co',
-    image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      "I'm incredibly impressed with Arun's work on our AI platform. The way he designed our AI persona Grace was exceptional, and the UI he created is simply outstanding. His attention to detail really brought our vision to life.",
+    name: 'Dex',
+    designation: 'Founder',
+    company: 'Carecob AI',
+    image: 'https://randomuser.me/api/portraits/men/1.jpg',
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: 'Chris Brown',
-    designation: 'COO',
-    company: 'DEF Corp',
-    image: 'https://randomuser.me/api/portraits/men/5.jpg',
+      "Arun delivered an exceptional website for Langit.ai. The hover effects are smooth and professional, and the Vercel deployment was flawless. His technical expertise and design sensibility are top-notch.",
+    name: 'Jeff Akusta',
+    designation: 'CEO',
+    company: 'Langit.ai',
+    image: 'https://randomuser.me/api/portraits/men/2.jpg',
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: 'Lisa Wang',
-    designation: 'CTO',
-    company: '456 Enterprises',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+      "Excellent work, Arun! Managing both the Finance Manager and Asset Manager modules was no small feat, but you handled the complexity brilliantly. The project exceeded our expectations.",
+    name: 'Project Manager',
+    designation: 'Lead',
+    company: 'Asset Management Project',
+    image: 'https://randomuser.me/api/portraits/men/3.jpg',
   },
 ];
 
