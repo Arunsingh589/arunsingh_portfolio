@@ -182,7 +182,7 @@ your local machine.
 
 Note :bangbang: the application uses EmailJS in order to send emails using client-side, therefore,
 you need to create EmailJS account [here](https://emailjs.com/) and sets the
-`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAIL_JS_ACCESS_TOKEN` environment
+`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_ACCESS_TOKEN` environment
 variables in `.env` file.
 
 **Step 1:**
@@ -241,10 +241,18 @@ Create a `.env` file in the root directory of the project and add the following 
 variables:
 
 ```env
-VITE_EMAILJS_SERVICE_ID=<VITE_EMAILJS_SERVICE_ID>
-VITE_EMAILJS_TEMPLATE_ID=<VITE_EMAILJS_TEMPLATE_ID>
-VITE_EMAIL_JS_ACCESS_TOKEN=<VITE_EMAIL_JS_ACCESS_TOKEN>
+VITE_EMAILJS_SERVICE_ID=service_your_id
+VITE_EMAILJS_TEMPLATE_ID=template_your_id
+VITE_EMAILJS_ACCESS_TOKEN=your_public_key
 ```
+
+Your EmailJS template should use these variables:
+
+- `{{form_name}}`
+- `{{from_email}}`
+- `{{to_name}}`
+- `{{to_email}}`
+- `{{message}}`
 
 ## 🚀 Deployment
 

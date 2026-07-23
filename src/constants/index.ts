@@ -5,6 +5,7 @@ import type {
   TExperience,
   TTestimonial,
   TProject,
+  TCertification,
 } from '../types';
 
 import {
@@ -18,6 +19,7 @@ import {
   reactjs,
   redux,
   tailwind,
+  typescript,
   nodejs,
   mongodb,
   git,
@@ -28,11 +30,12 @@ import {
   // starbucks,
   // tesla,
   // shopify,
-  carrent,
   oodles,
   snaptic,
   jobit,
-  tripguide,
+  carecob,
+  nowvideo,
+  langitai,
   python,
   django,
 } from '../assets';
@@ -47,6 +50,10 @@ export const navLinks: TNavLink[] = [
     title: 'Work',
   },
   {
+    id: 'awards',
+    title: 'Awards',
+  },
+  {
     id: 'contact',
     title: 'Contact',
   },
@@ -54,19 +61,19 @@ export const navLinks: TNavLink[] = [
 
 const services: TService[] = [
   {
-    title: 'Web Developer',
+    title: 'Full Stack Development',
     icon: web,
   },
   {
-    title: 'React Native Developer',
+    title: 'Frontend Development',
     icon: mobile,
   },
   {
-    title: 'Backend Developer',
+    title: 'Backend Development',
     icon: backend,
   },
   {
-    title: 'Video Creator',
+    title: 'AI & LLM Integration',
     icon: creator,
   },
 ];
@@ -84,10 +91,10 @@ const technologies: TTechnology[] = [
     name: 'JavaScript',
     icon: javascript,
   },
-  // {
-  //   name: 'TypeScript',
-  //   icon: typescript,
-  // },
+  {
+    name: 'TypeScript',
+    icon: typescript,
+  },
   {
     name: 'React JS',
     icon: reactjs,
@@ -199,27 +206,25 @@ const experiences: TExperience[] = [
     companyName: 'Oodles Technologies',
     icon: oodles,
     iconBg: '#E6DEDD',
-    date: '2024 - Present',
+    date: '2025 - Present',
     points: [
-      'Developing scalable web and mobile applications using React.js, React Native, Tailwind CSS, and modern JavaScript.',
-      'Building AI-powered landing page generator using LLMs where users create and update pages dynamically through prompts.',
-      'Implementing real-time section editing features allowing users to modify specific areas of the page interactively.',
-      'Designing and integrating REST APIs using Python and Django for backend services and business logic.',
-      'Managing live deployments and CI/CD workflows on Vercel for fast and reliable production releases.',
-      'Collaborating with designers, product managers, and backend teams to deliver high-quality, user-centric solutions.',
+      'Developed and deployed scalable full-stack applications using React.js, Django, PostgreSQL, and REST APIs.',
+      'Managed end-to-end application development from requirement gathering to deployment.',
+      'Designed scalable backend architectures and optimized application performance.',
+      'Integrated AI/LLM-powered features using OpenAI, LangChain, Twilio, and Vapi.',
+      'Collaborated directly with clients and delivered multiple enterprise-grade projects.',
     ],
   },
   {
     title: 'Frontend Developer Intern',
-    companyName: 'Snaptic Minds',
+    companyName: 'Snaptic Minds Consulting Pvt. Ltd.',
     icon: snaptic,
     iconBg: '#383E56',
-    date: '2023 - 2024',
+    date: '2024',
     points: [
-      'Developed responsive web applications using React.js, JavaScript, and Tailwind CSS.',
-      'Converted UI/UX designs into pixel-perfect, mobile-friendly interfaces.',
-      'Optimized performance and improved cross-browser compatibility.',
-      'Collaborated with team members to deliver features on time in an agile development environment.',
+      'Built responsive React.js applications using JavaScript and Tailwind CSS.',
+      'Collaborated with Agile teams to deliver new features and bug fixes.',
+      'Improved UI responsiveness and overall user experience.',
     ],
   },
 ];
@@ -227,23 +232,23 @@ const experiences: TExperience[] = [
 const testimonials: TTestimonial[] = [
   {
     testimonial:
-      "I'm incredibly impressed with Arun's work on our AI platform. The way he designed our AI persona Grace was exceptional, and the UI he created is simply outstanding. His attention to detail really brought our vision to life.",
+      'Arun played a key role in developing our AI healthcare platform. His expertise in full-stack development and AI integration helped us deliver a reliable, user-friendly product. His attention to detail and commitment to quality were exceptional.',
     name: 'Dex',
     designation: 'Founder',
-    company: 'Carecob AI',
+    company: 'CareCob AI',
     image: 'https://randomuser.me/api/portraits/men/1.jpg',
   },
   {
     testimonial:
-      "Arun delivered an exceptional website for Langit.ai. The hover effects are smooth and professional, and the Vercel deployment was flawless. His technical expertise and design sensibility are top-notch.",
+      'Arun delivered an excellent product with clean architecture, polished UI, and outstanding technical execution. His ability to understand requirements and translate them into scalable solutions made him a valuable contributor to our project.',
     name: 'Jeff Akusta',
     designation: 'CEO',
-    company: 'Langit.ai',
+    company: 'Langit AI',
     image: 'https://randomuser.me/api/portraits/men/2.jpg',
   },
   {
     testimonial:
-      "Excellent work, Arun! Managing both the Finance Manager and Asset Manager modules was no small feat, but you handled the complexity brilliantly. The project exceeded our expectations.",
+      'Arun consistently delivered high-quality code, handled complex requirements efficiently, and collaborated effectively across teams. His problem-solving skills and ownership contributed significantly to the success of the project.',
     name: 'Project Manager',
     designation: 'Lead',
     company: 'Asset Management Project',
@@ -251,11 +256,107 @@ const testimonials: TTestimonial[] = [
   },
 ];
 
+const certifications: TCertification[] = [
+  {
+    title: 'Project of the Month',
+    subtitle: 'Oodles Technologies',
+    description:
+      'Recognized for successfully leading the end-to-end development of the CareCob AI healthcare platform and delivering the project on schedule.',
+  },
+  {
+    title: 'HackerRank React (Frontend Developer)',
+    subtitle: 'React & JavaScript',
+    description: 'Ranked #1 in React and earned multiple badges in React and JavaScript.',
+  },
+];
+
 const projects: TProject[] = [
+  {
+    name: 'CareCob AI',
+    description:
+      'An AI-powered healthcare platform featuring intelligent voice assistants, medication reminders, personalized health profiles, real-time dashboards, SMS/email alerts, role-based authentication, and an enterprise admin panel.',
+    tags: [
+      {
+        name: 'react',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'django',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'python',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'postgresql',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'openai',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'langchain',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'twilio',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'vapi',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: carecob,
+    sourceCodeLink: 'https://www.carecob.com.au/',
+  },
+  {
+    name: 'NowVideo AI',
+    description:
+      'A real-time collaboration platform supporting HD video meetings, voice calls, live chat, screen sharing, file sharing, waiting rooms, AI-powered voice translation, and enterprise collaboration features.',
+    tags: [
+      {
+        name: 'react',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'nodejs',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'socket.io',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'postgresql',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'signalwire',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'vonage',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'elevenlabs',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'wordly',
+        color: 'orange-text-gradient',
+      },
+    ],
+    image: nowvideo,
+    sourceCodeLink: 'http://nowvideo.ai/',
+  },
   {
     name: 'Langit AI',
     description:
-      'A no-code Landing Page Generator with real-time editing via prompts, inline toolbars, and live previews. Features version history, chat-driven workflows, image/video uploads with prompt-based editing, undo/redo support, and one-click deployment.',
+      'A no-code AI-powered landing page builder with prompt-driven editing, live previews, version history, media uploads, collaborative editing, and one-click deployment.',
     tags: [
       {
         name: 'react',
@@ -271,20 +372,20 @@ const projects: TProject[] = [
       },
       {
         name: 'python',
-        color: 'purple-text-gradient',
+        color: 'blue-text-gradient',
       },
       {
         name: 'django',
         color: 'orange-text-gradient',
       },
     ],
-    image: carrent,
-    sourceCodeLink: 'https://github.com/',
+    image: langitai,
+    sourceCodeLink: 'https://langit.ai/',
   },
   {
     name: 'Asset Management System',
     description:
-      'A comprehensive asset management platform with CRUD operations and real-time state updates. Implements role-based access control (RBAC) at the UI level with client-side validation, error handling, and seamless API integration for consistent user experience.',
+      'A comprehensive enterprise asset management platform featuring role-based access control, inventory management, CRUD operations, real-time updates, API integrations, and client-side validations.',
     tags: [
       {
         name: 'react',
@@ -292,70 +393,24 @@ const projects: TProject[] = [
       },
       {
         name: 'javascript',
-        color: 'yellow-text-gradient',
+        color: 'green-text-gradient',
       },
       {
         name: 'tailwind',
         color: 'pink-text-gradient',
+      },
+      {
+        name: 'rest api',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'rbac',
+        color: 'blue-text-gradient',
       },
     ],
     image: jobit,
     sourceCodeLink: 'https://github.com/',
   },
-  {
-    name: 'CareCob AI',
-    description:
-      'An AI-powered healthcare companion platform with intelligent voice calls via VAPI, scheduled medication reminders, personalized health profiles, real-time dashboards with SMS/email alerts via Twilio, role-based authentication, and enterprise admin panel for caregiving organizations.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
-      {
-        name: 'django',
-        color: 'orange-text-gradient',
-      },
-      {
-        name: 'python',
-        color: 'purple-text-gradient',
-      },
-      {
-        name: 'vapi',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'twilio',
-        color: 'cyan-text-gradient',
-      },
-    ],
-    image: tripguide,
-    sourceCodeLink: 'https://github.com/',
-  },
-  {
-    name: 'CareGrowth Language App',
-    description:
-      'An interactive language learning app with modules for pronunciation, grammar, vocabulary, and practice lessons. Features AI-powered voice chat for conversations with speech-to-text, audio playback (normal/slow), and a vocabulary learning workflow with visual feedback and auto-reveal functionality.',
-    tags: [
-      {
-        name: 'react-native',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'javascript',
-        color: 'yellow-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: carrent,
-    sourceCodeLink: 'https://github.com/',
-  },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, testimonials, certifications, projects };

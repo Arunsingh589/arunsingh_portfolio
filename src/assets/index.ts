@@ -34,6 +34,9 @@ import snaptic from './company/snaptic.png';
 import carrent from './carrent.png';
 import jobit from './jobit.png';
 import tripguide from './tripguide.png';
+import carecob from './projects/carecob.png';
+import nowvideo from './projects/nowvideo.png';
+import langitai from './projects/langitai.png';
 
 export {
   logo,
@@ -66,6 +69,9 @@ export {
   carrent,
   jobit,
   tripguide,
+  carecob,
+  nowvideo,
+  langitai,
   python,
   django,
   native,

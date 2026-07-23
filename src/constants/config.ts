@@ -33,6 +33,7 @@ type TConfig = {
   sections: {
     about: Required<TSection>;
     experience: TSection;
+    certifications: TSection;
     feedbacks: TSection;
     works: Required<TSection>;
   };
@@ -46,7 +47,10 @@ export const config: TConfig = {
   },
   hero: {
     name: 'Arun Singh',
-    p: ['Crafting full-stack website, clean UIs, and Generative AI.'],
+    p: [
+      'Full Stack Developer | AI Engineer',
+      'Building scalable web applications and AI-powered solutions.',
+    ],
   },
   contact: {
     p: 'Get in touch',
@@ -67,16 +71,15 @@ export const config: TConfig = {
     about: {
       p: 'Introduction',
       h2: 'Overview.',
-      content: `I’m a passionate Full Stack Developer with 1+ years of practical experience 
-      creating responsive web and mobile applications using React.js, React Native, JavaScript,
-       Tailwind CSS, Python, and Django.
-       I learn fast, adapt quickly, and love turning complex ideas into simple, scalable solutions.
-        I focus on writing clean code, delivering results on time, and building products that 
-        clients truly appreciate. Let’s build something impactful together.!`,
+      content: `I'm a Full Stack Developer with 1.6+ years of professional experience developing scalable web and mobile applications using React.js, Next.js, React Native, Python, Django, FastAPI, PostgreSQL, and Tailwind CSS. Currently working as an Associate Consultant at Oodles Technologies, I specialize in designing end-to-end applications, building REST APIs, integrating AI/LLM-powered features, and delivering high-quality production software. I enjoy solving complex engineering problems, learning emerging technologies, and transforming ideas into reliable products.`,
     },
     experience: {
       p: 'What I have done so far',
       h2: 'Work Experience.',
+    },
+    certifications: {
+      p: 'Certifications & Awards',
+      h2: 'Recognition.',
     },
     feedbacks: {
       p: 'Client Appreciation',
@@ -87,9 +90,9 @@ export const config: TConfig = {
       h2: 'Projects.',
       content: `Following projects showcases my skills and experience through
     real-world examples of my work. Each project is briefly described with
-    links to code repositories and live demos in it. It reflects my
-    ability to solve complex problems, work with different technologies,
-    and manage projects effectively.`,
+    the technologies behind it. It reflects my ability to solve complex problems,
+    work with different technologies, and deliver production-ready software that
+    creates real business value.`,
     },
   },
 };
