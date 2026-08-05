@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 import { EarthCanvas } from '../canvas';
@@ -22,6 +22,21 @@ const Contact = () => {
   const formRef = useRef<React.LegacyRef<HTMLFormElement> | undefined>();
   const [form, setForm] = useState(INITIAL_STATE);
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState<{ message: string, type: 'error' | 'success' } | null>(null);
+
+  // Auto-dismiss toast
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => {
+        setToast(null);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
+
+  const showToast = (message: string, type: 'error' | 'success') => {
+    setToast({ message, type });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | undefined
@@ -34,11 +49,18 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement> | undefined) => {
     if (e === undefined) return;
     e.preventDefault();
+
+    // Empty field validation
+    if (!form.name || !form.email || !form.message) {
+      showToast("Please fill all the fields.", "error");
+      return;
+    }
+
     setLoading(true);
 
     if (!emailjsConfig.serviceId || !emailjsConfig.templateId || !emailjsConfig.accessToken) {
       setLoading(false);
-      alert('Contact form is not configured yet.');
+      showToast('Contact form is not configured yet.', "error");
       return;
     }
 
@@ -58,21 +80,19 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert('Thank you. I will get back to you as soon as possible.');
-
+          showToast('Thank you. I will get back to you as soon as possible.', "success");
           setForm(INITIAL_STATE);
         },
         error => {
           setLoading(false);
-
           console.log(error);
-          alert('Something went wrong.');
+          showToast('Something went wrong.', "error");
         }
       );
   };
 
   return (
-    <div className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row`}>
+    <div className={`flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row relative`}>
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="bg-black-100 flex-[0.75] rounded-2xl p-8"
@@ -120,6 +140,38 @@ const Contact = () => {
       >
         <EarthCanvas />
       </motion.div>
+
+      {/* Premium Toast Notification */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: 20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            exit={{ opacity: 0, y: 20, x: 20 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+            className="fixed bottom-10 right-10 z-[100] min-w-[300px]"
+          >
+            <div className={`green-pink-gradient p-[1px] rounded-[10px] w-full shadow-card`}>
+              <div className="bg-tertiary px-6 py-4 rounded-[10px] flex items-center justify-between border border-white/5">
+                <div className="flex items-center gap-3">
+                  <span className="text-[20px]">
+                    {toast.type === 'error' ? '⚠️' : '✨'}
+                  </span>
+                  <p className="text-white text-[14px] font-medium m-0">
+                    {toast.message}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setToast(null)}
+                  className="text-secondary hover:text-white transition-colors text-xl font-bold ml-4"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

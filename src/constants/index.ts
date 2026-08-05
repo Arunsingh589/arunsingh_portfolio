@@ -132,16 +132,127 @@ const technologies: TTechnology[] = [
     icon: figma,
   },
   {
-    name: 'docker',
+    name: 'Docker',
     icon: docker,
   },
   {
-    name: 'python',
+    name: 'Python',
     icon: python,
   },
   {
-    name: 'django',
+    name: 'Django',
     icon: django,
+  },
+  {
+    name: 'Next.js',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+  },
+  {
+    name: 'FastAPI',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+  },
+  {
+    name: 'REST APIs',
+    icon: 'https://cdn-icons-png.flaticon.com/512/841/841114.png',
+  },
+  {
+    name: 'PostgreSQL',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+  },
+  {
+    name: 'SQLite',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
+  },
+  {
+    name: 'ChromaDB',
+    icon: 'https://img.icons8.com/color/48/000000/database.png',
+  },
+  {
+    name: 'GitHub',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+  },
+  {
+    name: 'Postman',
+    icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg',
+  },
+  {
+    name: 'VS Code',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+  },
+  {
+    name: 'RAG',
+    icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/></svg>",
+  },
+  {
+    name: 'LangChain',
+    icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'><path d='M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z'/></svg>",
+  },
+  {
+    name: 'LLM Integrations',
+    icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'><path d='M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2M9 11H7V9h2v2m4 0h-2V9h2v2m4 0h-2V9h2v2'/></svg>",
+  },
+  {
+    name: 'Prompt Engineering',
+    icon: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M9 2L7.17 6.17 3 8l4.17 1.83L9 14l1.83-4.17L15 8l-4.17-1.83L9 2M19 15l-1.17 2.83L15 19l2.83 1.17L19 23l1.17-2.83L23 19l-2.83-1.17L19 15M19 1l-1.17 2.83L15 5l2.83 1.17L19 9l1.17-2.83L23 5l-2.83-1.17L19 1z'/></svg>",
+  },
+];
+
+const skillCategories = [
+  {
+    title: 'Frontend',
+    skills: [
+      { name: 'React.js' },
+      { name: 'Next.js' },
+      { name: 'JavaScript' },
+      { name: 'TypeScript' },
+      { name: 'HTML5' },
+      { name: 'CSS3' },
+      { name: 'Tailwind CSS' },
+    ],
+  },
+  {
+    title: 'Backend',
+    skills: [
+      { name: 'Python' },
+      { name: 'Django' },
+      { name: 'Node.js' },
+      { name: 'FastAPI' },
+      { name: 'REST APIs' },
+    ],
+  },
+  {
+    title: 'Mobile',
+    skills: [
+      { name: 'React Native' },
+    ],
+  },
+  {
+    title: 'Database',
+    skills: [
+      { name: 'PostgreSQL' },
+      { name: 'SQLite' },
+      { name: 'MongoDB' },
+      { name: 'ChromaDB' },
+    ],
+  },
+  {
+    title: 'Tools',
+    skills: [
+      { name: 'Git' },
+      { name: 'GitHub' },
+      { name: 'Docker' },
+      { name: 'Postman' },
+      { name: 'VS Code' },
+    ],
+  },
+  {
+    title: 'AI/LLM',
+    skills: [
+      { name: 'RAG' },
+      { name: 'LangChain' },
+      { name: 'LLM Integrations' },
+      { name: 'Prompt Engineering' },
+    ],
   },
 ];
 
@@ -413,4 +524,4 @@ const projects: TProject[] = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, certifications, projects };
+export { services, technologies, skillCategories, experiences, testimonials, certifications, projects };
