@@ -1,11 +1,71 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { Mesh, MeshStandardMaterial, Object3D } from "three";
 
 import CanvasLoader from "../layout/Loader";
+import { createScreen, TOTAL_CHARS } from "./screenTexture";
+
+const SCREEN_MATERIAL = "Material.074_30";
+
+// Replaces the monitor's static screenshot with a live, typing code editor.
+const useLiveScreen = (scene: Object3D) => {
+  const { invalidate, gl } = useThree();
+
+  useEffect(() => {
+    let material: MeshStandardMaterial | undefined;
+    scene.traverse((obj) => {
+      const mesh = obj as Mesh;
+      if (mesh.isMesh && (mesh.material as MeshStandardMaterial).name === SCREEN_MATERIAL) {
+        material = mesh.material as MeshStandardMaterial;
+      }
+    });
+    if (!material) return;
+
+    const { texture, draw } = createScreen();
+    texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+    material.map = texture;
+    material.emissiveMap = texture;
+    material.needsUpdate = true;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let chars = reduceMotion ? TOTAL_CHARS : 0;
+    let tick = 0;
+    let onScreen = true;
+    draw(chars, true);
+    invalidate();
+    if (reduceMotion) return () => texture.dispose();
+
+    const observer = new IntersectionObserver(([entry]) => {
+      onScreen = entry.isIntersecting;
+    });
+    observer.observe(gl.domElement);
+
+    const timer = window.setInterval(() => {
+      if (!onScreen || document.hidden) return;
+      tick += 1;
+      if (chars < TOTAL_CHARS) {
+        chars = Math.min(TOTAL_CHARS, chars + 2);
+        draw(chars, true);
+      } else if (tick % 12 === 0) {
+        draw(chars, (tick / 12) % 2 === 0); // blink roughly twice a second
+      } else {
+        return;
+      }
+      invalidate();
+    }, 45);
+
+    return () => {
+      window.clearInterval(timer);
+      observer.disconnect();
+      texture.dispose();
+    };
+  }, [scene, gl, invalidate]);
+};
 
 const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("./desktop_pc/scene.glb");
+  useLiveScreen(computer.scene);
 
   return (
     <mesh>

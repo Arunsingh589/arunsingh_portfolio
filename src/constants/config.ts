@@ -9,6 +9,8 @@ type TConfig = {
     title: string;
     fullName: string;
     email: string;
+    github: string;
+    linkedin: string;
   };
   hero: {
     name: string;
@@ -44,26 +46,28 @@ export const config: TConfig = {
     title: 'Arun Singh',
     fullName: 'Arun Singh',
     email: 'arunsingh875014@gmail.com',
+    github: 'https://github.com/Arunsingh589',
+    linkedin: 'https://www.linkedin.com/in/arun-singh-27148b254',
   },
   hero: {
     name: 'Arun Singh',
     p: [
-      'Full Stack Developer | AI Engineer',
-      'Building scalable web applications and AI-powered solutions.',
+      'Full Stack & AI Engineer.',
+      'I build fast web products and the AI agents that power them.',
     ],
   },
   contact: {
-    p: 'Get in touch',
-    h2: 'Contact.',
+    p: 'Have a project in mind?',
+    h2: "Let's talk.",
     form: {
       name: {
-        span: 'Your Name',
-        placeholder: "What's your name?",
+        span: 'Name',
+        placeholder: 'Your name',
       },
-      email: { span: 'Your Email', placeholder: "What's your email?" },
+      email: { span: 'Email', placeholder: 'you@company.com' },
       message: {
-        span: 'Your Message',
-        placeholder: 'What do you want to say?',
+        span: 'Message',
+        placeholder: 'Tell me about your idea, team or role…',
       },
     },
   },
@@ -71,28 +75,24 @@ export const config: TConfig = {
     about: {
       p: 'Introduction',
       h2: 'Overview.',
-      content: `I'm a Full Stack Developer with 1.6+ years of professional experience developing scalable web and mobile applications using React.js, Next.js, React Native, Python, Django, FastAPI, PostgreSQL, and Tailwind CSS. Currently working as an Associate Consultant at Oodles Technologies, I specialize in designing end-to-end applications, building REST APIs, integrating AI/LLM-powered features, and delivering high-quality production software. I enjoy solving complex engineering problems, learning emerging technologies, and transforming ideas into reliable products.`,
+      content: `I'm a Full Stack & AI Engineer at Oodles Technologies, where I've spent 1.10+ years taking products from idea to production. I work across the whole stack, with React, Next.js and React Native on the front end and Python, Django, FastAPI and PostgreSQL on the back end. I specialize in turning LLMs into real features: RAG pipelines, agent workflows and voice assistants that ship to real users. I care about clean architecture, fast interfaces, and software that keeps working after launch.`,
     },
     experience: {
-      p: 'What I have done so far',
-      h2: 'Work Experience.',
+      p: 'Where I have worked',
+      h2: 'Experience.',
     },
     certifications: {
-      p: 'Certifications & Awards',
+      p: 'Awards & Education',
       h2: 'Recognition.',
     },
     feedbacks: {
-      p: 'Client Appreciation',
-      h2: 'What Clients Say.',
+      p: 'Kind words',
+      h2: 'What clients say.',
     },
     works: {
-      p: 'My work',
+      p: 'Selected work',
       h2: 'Projects.',
-      content: `Following projects showcases my skills and experience through
-    real-world examples of my work. Each project is briefly described with
-    the technologies behind it. It reflects my ability to solve complex problems,
-    work with different technologies, and deliver production-ready software that
-    creates real business value.`,
+      content: `A few products I've designed and built, from AI agent platforms to real-time video and healthcare voice assistants. Each one shipped to real users, and each card lists the stack behind it.`,
     },
   },
 };

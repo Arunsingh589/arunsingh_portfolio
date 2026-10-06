@@ -30,7 +30,7 @@ const ServiceCard: React.FC<IServiceCard> = ({ index, title, icon }) => (
         <div className="bg-tertiary flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] px-12 py-5">
           <img
             src={icon}
-            alt="web-development"
+            alt=""
             className="h-16 w-16 object-contain"
           />
 

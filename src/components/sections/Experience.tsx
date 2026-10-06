@@ -27,6 +27,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
           <img
             src={experience.icon}
             alt={experience.companyName}
+            loading="lazy"
             className="h-[60%] w-[60%] object-contain"
           />
         </div>
@@ -72,4 +73,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "experience");

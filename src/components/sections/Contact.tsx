@@ -85,8 +85,8 @@ const Contact = () => {
         },
         error => {
           setLoading(false);
-          console.log(error);
-          showToast('Something went wrong.', "error");
+          console.error(error);
+          showToast(`Something went wrong. Please email me at ${config.html.email}.`, "error");
         }
       );
   };
@@ -98,6 +98,21 @@ const Contact = () => {
         className="bg-black-100 flex-[0.75] rounded-2xl p-8"
       >
         <Header useMotion={false} {...config.contact} />
+        <p className="text-secondary mt-4 text-[16px]">
+          Open to full-time roles and freelance projects. Email me directly at{' '}
+          <a href={`mailto:${config.html.email}`} className="text-white underline-offset-4 hover:underline">
+            {config.html.email}
+          </a>{' '}
+          or use the form below.
+        </p>
+        <div className="mt-4 flex gap-5 text-[15px] font-medium">
+          <a href={config.html.linkedin} target="_blank" rel="noreferrer" className="text-white hover:text-[#915EFF]">
+            LinkedIn ↗
+          </a>
+          <a href={config.html.github} target="_blank" rel="noreferrer" className="text-white hover:text-[#915EFF]">
+            GitHub ↗
+          </a>
+        </div>
 
         <form
           // @ts-expect-error
@@ -127,16 +142,17 @@ const Contact = () => {
           })}
           <button
             type="submit"
+            disabled={loading}
             className="bg-tertiary shadow-primary w-fit rounded-xl px-8 py-3 font-bold text-white shadow-md outline-none"
           >
-            {loading ? 'Sending...' : 'Send'}
+            {loading ? 'Sending…' : 'Send message'}
           </button>
         </form>
       </motion.div>
 
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1"
+        className="h-[350px] md:h-[550px] xl:h-[700px] xl:flex-1 xl:self-center"
       >
         <EarthCanvas />
       </motion.div>
@@ -149,7 +165,9 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0, x: 0 }}
             exit={{ opacity: 0, y: 20, x: 20 }}
             transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-            className="fixed bottom-10 right-10 z-[100] min-w-[300px]"
+            role="status"
+            aria-live="polite"
+            className="fixed bottom-6 right-4 left-4 z-[100] sm:left-auto sm:right-10 sm:bottom-10 sm:min-w-[300px]"
           >
             <div className={`green-pink-gradient p-[1px] rounded-[10px] w-full shadow-card`}>
               <div className="bg-tertiary px-6 py-4 rounded-[10px] flex items-center justify-between border border-white/5">
@@ -163,6 +181,7 @@ const Contact = () => {
                 </div>
                 <button
                   onClick={() => setToast(null)}
+                  aria-label="Dismiss notification"
                   className="text-secondary hover:text-white transition-colors text-xl font-bold ml-4"
                 >
                   &times;

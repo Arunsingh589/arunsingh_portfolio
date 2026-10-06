@@ -3,40 +3,45 @@ import backend from './backend.png';
 import creator from './creator.png';
 import mobile from './mobile.png';
 import web from './web.png';
-import github from './github.png';
 import menu from './menu.svg';
 import close from './close.svg';
-import python from './tech/python.png';
-import django from './tech/django.png';
 
 import css from './tech/css.png';
 import docker from './tech/docker.png';
-import figma from './tech/figma.png';
 import git from './tech/git.png';
 import html from './tech/html.png';
 import javascript from './tech/javascript.png';
-import mongodb from './tech/mongodb.png';
 import nodejs from './tech/nodejs.png';
 import reactjs from './tech/reactjs.png';
 import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
 import typescript from './tech/typescript.png';
-import threejs from './tech/threejs.svg';
-import native from './tech/native.jpeg';
+import python from './tech/python.svg';
+import django from './tech/django.svg';
+import reactnative from './tech/reactnative.svg';
+import nextjs from './tech/nextjs.svg';
+import fastapi from './tech/fastapi.svg';
+import restapi from './tech/restapi.svg';
+import postgresql from './tech/postgresql.svg';
+import sqlite from './tech/sqlite.svg';
+import chromadb from './tech/chromadb.svg';
+import github from './tech/github.svg';
+import postman from './tech/postman.svg';
+import vscode from './tech/vscode.svg';
+import openai from './tech/openai.svg';
+import ollama from './tech/ollama.svg';
+import langchain from './tech/langchain.svg';
+import langgraph from './tech/langgraph.svg';
+import rag from './tech/rag.svg';
+import prompt from './tech/prompt.svg';
 
-import meta from './company/meta.png';
-import shopify from './company/shopify.png';
-import starbucks from './company/starbucks.png';
-import tesla from './company/tesla.png';
 import oodles from './company/oodles.png';
 import snaptic from './company/snaptic.png';
 
-import carrent from './carrent.png';
-import jobit from './jobit.png';
-import tripguide from './tripguide.png';
-import carecob from './projects/carecob.png';
-import nowvideo from './projects/nowvideo.png';
-import langitai from './projects/langitai.png';
+import carecob from './projects/carecob.webp';
+import nowvideo from './projects/nowvideo.webp';
+import langitai from './projects/langitai.webp';
+import orqeva from './projects/orqeva.svg';
 
 export {
   logo,
@@ -44,35 +49,40 @@ export {
   creator,
   mobile,
   web,
-  github,
   menu,
   close,
   css,
   docker,
-  figma,
   git,
   html,
   javascript,
-  mongodb,
   nodejs,
   reactjs,
   redux,
   tailwind,
   typescript,
-  threejs,
-  meta,
-  shopify,
-  starbucks,
   oodles,
   snaptic,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
   carecob,
   nowvideo,
   langitai,
+  orqeva,
   python,
   django,
-  native,
+  reactnative,
+  nextjs,
+  fastapi,
+  restapi,
+  postgresql,
+  sqlite,
+  chromadb,
+  github,
+  postman,
+  vscode,
+  openai,
+  ollama,
+  langchain,
+  langgraph,
+  rag,
+  prompt,
 };

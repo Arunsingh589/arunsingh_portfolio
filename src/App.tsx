@@ -1,5 +1,3 @@
-import { BrowserRouter } from 'react-router-dom';
-
 import {
   About,
   Contact,
@@ -12,23 +10,16 @@ import {
   Works,
   StarsCanvas,
 } from './components';
-import { useEffect } from 'react';
 import { config } from './constants/config';
 
 const App = () => {
-  useEffect(() => {
-    if (document.title !== config.html.title) {
-      document.title = config.html.title;
-    }
-  }, []);
-
   return (
-    <BrowserRouter>
-      <div className="bg-primary relative z-0">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-          <Navbar />
-          <Hero />
-        </div>
+    <div className="bg-primary relative z-0">
+      <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+        <Navbar />
+        <Hero />
+      </div>
+      <main>
         <About />
         <Experience />
         <Tech />
@@ -37,11 +28,20 @@ const App = () => {
         <Feedbacks />
         <div className="relative z-0">
           <Contact />
-          {/* <StarsCanvas /> */}
         </div>
-        <StarsCanvas />
-      </div>
-    </BrowserRouter>
+      </main>
+      <footer className="text-secondary relative z-10 border-t border-white/5 py-8 text-center text-[14px]">
+        © {new Date().getFullYear()} {config.html.fullName} ·{' '}
+        <a href={config.html.github} target="_blank" rel="noreferrer" className="hover:text-white">
+          GitHub
+        </a>{' '}
+        ·{' '}
+        <a href={config.html.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">
+          LinkedIn
+        </a>
+      </footer>
+      <StarsCanvas />
+    </div>
   );
 };
 

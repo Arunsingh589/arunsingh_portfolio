@@ -11,7 +11,7 @@ const Certifications = () => {
     <>
       <Header useMotion={true} {...config.sections.certifications} />
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {certifications.map((certification, index) => (
           <motion.div
             key={certification.title}

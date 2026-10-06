@@ -16,21 +16,57 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
   image,
   sourceCodeLink,
 }) => {
+  const cover = (
+    <img
+      src={image}
+      alt={`${name} preview`}
+      loading="lazy"
+      decoding="async"
+      width={360}
+      height={230}
+      className="h-full w-full rounded-2xl object-cover"
+    />
+  );
+
   return (
-    <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)} className="h-full">
-      <Tilt glareEnable tiltEnable tiltMaxAngleX={30} tiltMaxAngleY={30} glareColor="#aaa6c3">
-        <div className="bg-tertiary rounded-2xl p-5 h-full min-h-[550px] flex flex-col w-[320px] flex-shrink-0 sm:w-[340px] md:w-[360px]">
+    // Every wrapper is a flex container so cards stretch to the tallest one in the row.
+    <motion.div variants={fadeIn('up', 'spring', index * 0.3, 0.75)} className="flex flex-shrink-0">
+      <Tilt
+        className="flex"
+        tiltMaxAngleX={12}
+        tiltMaxAngleY={12}
+        glareEnable
+        glareMaxOpacity={0.15}
+        glareColor="#aaa6c3"
+      >
+        <div className="bg-tertiary rounded-2xl p-5 flex flex-col w-[300px] sm:w-[340px] md:w-[360px]">
           <div className="relative h-[230px] w-full">
-            <a href={sourceCodeLink} target="_blank" rel="noreferrer" aria-label={`Open ${name}`}>
-              <img src={image} alt={name} className="h-full w-full rounded-2xl object-cover" />
-            </a>
+            {sourceCodeLink ? (
+              <a href={sourceCodeLink} target="_blank" rel="noreferrer" aria-label={`Visit ${name}`}>
+                {cover}
+              </a>
+            ) : (
+              cover
+            )}
           </div>
           <div className="mt-5 flex flex-col flex-grow">
-            <h3 className="text-[24px] font-bold text-white">{name}</h3>
-            <p className="text-secondary mt-2 text-[14px] flex-grow">{description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="text-[24px] font-bold text-white">{name}</h3>
+              {sourceCodeLink && (
+                <a
+                  href={sourceCodeLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-secondary text-[13px] font-medium whitespace-nowrap hover:text-white"
+                >
+                  Live ↗
+                </a>
+              )}
+            </div>
+            <p className="text-secondary mt-2 text-[14px] leading-[22px] flex-grow">{description}</p>
+            <div className="mt-5 flex flex-wrap gap-x-3 gap-y-1">
               {tags.map(tag => (
-                <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                <p key={tag.name} className={`text-[14px] font-medium ${tag.color}`}>
                   #{tag.name}
                 </p>
               ))}
@@ -58,11 +94,11 @@ const Works = () => {
 
       <div className="mt-20 flex flex-nowrap gap-7 w-full overflow-x-auto pb-4 scrollbar-hide">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard key={project.name} index={index} {...project} />
         ))}
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Works, '');
+export default SectionWrapper(Works, 'projects');

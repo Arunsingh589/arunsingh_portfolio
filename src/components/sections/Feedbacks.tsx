@@ -16,22 +16,28 @@ const FeedbackCard: React.FC<{ index: number } & TTestimonial> = ({
 }) => (
   <motion.div
     variants={fadeIn('', 'spring', index * 0.5, 0.75)}
-    className="bg-black-200 flex h-full min-h-[430px] w-full flex-col rounded-3xl p-10"
+    className="bg-black-200 flex h-full w-full flex-col rounded-3xl p-8 sm:p-10"
   >
-    <p className="text-[48px] font-black text-white">"</p>
+    <p className="text-[48px] font-black leading-none text-[#915EFF]" aria-hidden="true">
+      “
+    </p>
 
-    <div className="mt-1 flex flex-1 flex-col">
-      <p className="text-[18px] tracking-wider text-white">{testimonial}</p>
+    <blockquote className="mt-3 flex-1 text-[17px] leading-[30px] text-white-100">
+      {testimonial}
+    </blockquote>
 
-      <div className="mt-auto pt-7">
-        <div className="flex flex-1 flex-col">
-          <p className="text-[16px] font-medium text-white">
-            <span className="blue-text-gradient">@</span> {name}
-          </p>
-          <p className="text-secondary mt-1 text-[12px]">
-            {designation} of {company}
-          </p>
-        </div>
+    <div className="mt-8 flex items-center gap-4">
+      <div
+        className="green-pink-gradient flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-[18px] font-bold text-white"
+        aria-hidden="true"
+      >
+        {name.charAt(0)}
+      </div>
+      <div>
+        <p className="text-[16px] font-semibold text-white">{name}</p>
+        <p className="text-secondary text-[13px]">
+          {designation}, {company}
+        </p>
       </div>
     </div>
   </motion.div>
@@ -44,7 +50,7 @@ const Feedbacks = () => {
         <Header useMotion={true} {...config.sections.feedbacks} />
       </div>
       <div
-        className={`${styles.paddingX} -mt-20 grid grid-cols-1 gap-7 pb-14 md:grid-cols-2 xl:grid-cols-3`}
+        className={`${styles.paddingX} -mt-20 grid grid-cols-1 gap-7 pb-14 md:grid-cols-2`}
       >
         {testimonials.map((testimonial, index) => (
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
